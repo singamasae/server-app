@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @Configuration
 @EnableAuthorizationServer
 public class OAuth2AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
-	private static final String RESOURCE_ID = "restservice";
+	private static final String RESOURCE_ID = "OAuth2RestApp";
 	
 	@Autowired
 	@Qualifier("authenticationManagerBean")
