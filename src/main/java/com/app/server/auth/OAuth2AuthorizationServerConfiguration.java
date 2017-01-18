@@ -19,13 +19,17 @@ public class OAuth2AuthorizationServerConfiguration extends AuthorizationServerC
 	@Autowired
 	@Qualifier("authenticationManagerBean")
 	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private MyUserDetailsService userDetailsService;
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		// TODO Auto-generated method stub		
 		endpoints
 			.tokenStore(new InMemoryTokenStore())
-			.authenticationManager(authenticationManager);
+			.authenticationManager(authenticationManager)
+			.userDetailsService(userDetailsService);
 	}
 
 
