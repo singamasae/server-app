@@ -8,7 +8,7 @@ Auth server & resource server are in the same application
 	
 ### Refresh Token ###
 
-	curl -X POST -vu clientapp:123456 http://localhost:10000/oauth/token -H "Accept: application/json" -d "grant_type=refresh_token&refresh_token=REFRESH_TOKEN"
+	curl -X POST -vu clientapp:123456 http://localhost:10000/oauth/token -H "Accept: application/json" -d "grant_type=refresh_token&refresh_token=YOUR_REFRESH_TOKEN"
 	
 ## Access protected API ##
-	http://localhost:10000/api/user/?access_token=9c62ed6e-6f62-4be4-9e0b-c0d78e3951c8
+	http://localhost:10000/api/user/?access_token=YOUR_ACCESS_TOKEN
