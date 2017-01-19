@@ -11,3 +11,6 @@ securing REST API with OAuth2
 	
 ## Access protected API ##
 	http://localhost:10000/api/user/?access_token=YOUR_ACCESS_TOKEN
+	
+## Unprotected API ##
+	http://localhost:10000/api/test

@@ -20,6 +20,9 @@ public class OAuth2ResourceServerConfiguration extends ResourceServerConfigurerA
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		// TODO Auto-generated method stub
-		http.authorizeRequests().anyRequest().authenticated();
+		http
+			.authorizeRequests()
+				.antMatchers("/api/test").permitAll()
+				.anyRequest().authenticated();
 	}
 }

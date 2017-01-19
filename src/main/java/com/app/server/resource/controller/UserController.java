@@ -19,4 +19,12 @@ public class UserController {
 		hasil.put("user", user.getName());
 		return hasil;
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/test")
+	public Map<String, Object> test() {
+		Map<String, Object> hasil = new HashMap<String, Object>();
+		hasil.put("response", Boolean.TRUE);
+		hasil.put("message", "test unprotected api");
+		return hasil;
+	}
 }
