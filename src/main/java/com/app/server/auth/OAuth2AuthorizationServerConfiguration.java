@@ -15,12 +15,15 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @EnableAuthorizationServer
 public class OAuth2AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 	private static final String RESOURCE_ID = "OAuth2RestApp";
+	private static final String CLIENT_ID = "clientapp";
+	private static final String CLIENT_SECRET = "123456";
 	
 	@Autowired
 	@Qualifier("authenticationManagerBean")
 	private AuthenticationManager authenticationManager;
 	
 	@Autowired
+	@Qualifier("userDetailsService")
 	private MyUserDetailsService userDetailsService;
 
 	@Override
@@ -47,11 +50,11 @@ public class OAuth2AuthorizationServerConfiguration extends AuthorizationServerC
 		// TODO Auto-generated method stub		
 		clients
 			.inMemory()
-			.withClient("clientapp")			
+			.withClient(CLIENT_ID)			
 			.authorizedGrantTypes("password", "refresh_token")			
 			.scopes("read", "write")
 			.resourceIds(RESOURCE_ID)
-			.secret("123456");
+			.secret(CLIENT_SECRET);
 
 	}
 

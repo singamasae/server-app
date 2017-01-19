@@ -15,10 +15,10 @@ import com.app.server.resource.services.UserServices;
 
 public class MyUserDetailsService implements UserDetailsService {
 	@Autowired
-	UserServices userServices;
+	private UserServices userServices;
 
-	// private static Logger log =
-	// LoggerFactory.getLogger(MyUserDetailsService.class);
+	// private static Logger log = LoggerFactory.getLogger(MyUserDetailsService.class);
+	
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		User user = userServices.findByUserName(username);

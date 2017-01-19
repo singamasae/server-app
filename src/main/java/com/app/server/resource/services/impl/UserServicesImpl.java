@@ -13,7 +13,7 @@ import com.app.server.resource.model.User;
 import com.app.server.resource.services.UserServices;
 
 @Service(value = "userServices")
-@Transactional(value = "txManager", readOnly = true)
+@Transactional(readOnly = true)
 public class UserServicesImpl implements UserServices {
 	@Autowired
 	private UserDao userDao;
