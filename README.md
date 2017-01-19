@@ -1,6 +1,5 @@
 # server-app #
 securing REST API with OAuth2
-Auth server & resource server are in the same application
 
 ### Request Token ###
 
