@@ -44,8 +44,13 @@ public class OAuth2AuthorizationServerConfiguration extends AuthorizationServerC
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		// TODO Auto-generated method stub
-		clients.inMemory().withClient(CLIENT_ID).authorizedGrantTypes("password", "refresh_token")
-				.scopes("read", "write").secret(CLIENT_SECRET);
+		clients
+			.inMemory()
+			.withClient(CLIENT_ID)
+			.authorizedGrantTypes("password", "refresh_token")
+			.scopes("read", "write")
+			.secret(CLIENT_SECRET)
+			.accessTokenValiditySeconds(60);
 
 	}
 
